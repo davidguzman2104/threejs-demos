@@ -1,0 +1,304 @@
+/* =========================
+   BASE
+========================= */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Orbitron", sans-serif;
+  background: radial-gradient(circle at center, #0f172a, #020617);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* =========================
+   STAGE (zona 3D)
+========================= */
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 112px);
+
+  background:
+    radial-gradient(circle at center, #020617 0%, #000 100%);
+
+  overflow: hidden;
+}
+
+/* grid futurista */
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(59,130,246,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.08) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  pointer-events: none;
+}
+
+/* =========================
+   CANVAS
+========================= */
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* borde tecnológico */
+
+.stage canvas {
+  border-top: 1px solid rgba(59,130,246,0.2);
+  border-bottom: 1px solid rgba(59,130,246,0.2);
+
+  box-shadow:
+    inset 0 0 80px rgba(59,130,246,0.1),
+    0 0 40px rgba(59,130,246,0.15);
+}
+
+/* =========================
+   POINTERLOCK OVERLAY
+========================= */
+
+.blocker {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,.65);
+
+  display: grid;
+  place-items: center;
+
+  backdrop-filter: blur(6px);
+
+  z-index: 10;
+}
+
+.instructions {
+
+  text-align: center;
+  color: #e2e8f0;
+
+  cursor: pointer;
+
+  padding: 30px 50px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(30,41,59,.9),
+    rgba(15,23,42,.9)
+  );
+
+  border: 1px solid rgba(59,130,246,.4);
+
+  box-shadow:
+    0 0 25px rgba(59,130,246,.25),
+    inset 0 0 10px rgba(59,130,246,.15);
+
+  transition: 0.3s;
+}
+
+.instructions:hover {
+
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 35px rgba(96,165,250,.5),
+    inset 0 0 15px rgba(96,165,250,.3);
+
+}
+
+/* =========================
+   NAVBAR FUTURISTA
+========================= */
+
+.custom-navbar {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.7rem 1rem;
+
+  background: linear-gradient(
+    90deg,
+    #020617,
+    #0f172a
+  );
+
+  border-bottom: 1px solid rgba(59,130,246,0.3);
+
+  box-shadow:
+    0 0 20px rgba(59,130,246,0.2);
+
+}
+
+/* titulo */
+
+.nav-title {
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: #38bdf8;
+
+  text-shadow:
+    0 0 8px rgba(56,189,248,.8),
+    0 0 16px rgba(56,189,248,.5);
+
+}
+
+/* subtitulo */
+
+.nav-subtitle {
+
+  font-size: 0.85rem;
+
+  color: #94a3b8;
+
+}
+
+/* =========================
+   RADIO INPUTS (UIVERSE)
+========================= */
+
+.radio-inputs {
+
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  border-radius: 1rem;
+
+  background: linear-gradient(
+    145deg,
+    #020617,
+    #020617
+  );
+
+  padding: .5rem;
+
+  max-width: 650px;
+
+  gap: .5rem;
+
+  border: 1px solid rgba(59,130,246,.2);
+
+  box-shadow:
+    0 0 25px rgba(59,130,246,.15),
+    inset 0 0 10px rgba(59,130,246,.1);
+
+}
+
+.radio-inputs .radio {
+
+  flex: 1 1 auto;
+
+  text-align: center;
+
+  position: relative;
+
+}
+
+.radio-inputs .radio input {
+
+  display: none;
+
+}
+
+.radio-inputs .radio .name {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: .6rem .9rem;
+
+  border-radius: .7rem;
+
+  cursor: pointer;
+
+  color: #cbd5f5;
+
+  background: linear-gradient(
+    145deg,
+    #020617,
+    #0f172a
+  );
+
+  border: 1px solid rgba(59,130,246,.15);
+
+  transition: 0.25s;
+
+}
+
+.radio-inputs .radio:hover .name {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 12px rgba(59,130,246,.35);
+
+}
+
+/* seleccionado */
+
+.radio-inputs .radio input:checked + .name {
+
+  background: linear-gradient(
+    145deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: white;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 0 15px rgba(59,130,246,.6),
+    inset 0 0 10px rgba(255,255,255,.15);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  background: #020617;
+
+  border-top: 1px solid rgba(59,130,246,.25);
+
+  text-align: center;
+
+  padding: 10px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+
+.d-none {
+  display: none !important;
+}
