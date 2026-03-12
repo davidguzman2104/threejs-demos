@@ -102,7 +102,7 @@ El objetivo es explorar distintas formas de navegación en entornos 3D dentro de
 ---
 
 # 👨‍💻 Autor
-Nombre: David Fidel Guzmàn Sànchez
+Nombre: David Fidel Guzmàn Sànche
 
 Materia: Ambientes Virtuales
 
